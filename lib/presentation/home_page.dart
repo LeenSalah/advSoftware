@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uni_verse/presentation/common/categories_container.dart';
+import 'package:uni_verse/presentation/mental_health.dart';
 import 'package:uni_verse/presentation/others.dart';
 import 'package:uni_verse/presentation/time_management.dart';
 
@@ -72,6 +73,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, Others.route);
               },
             )
+
           ],
         ),
       ),

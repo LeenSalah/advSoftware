@@ -6,6 +6,7 @@ import 'package:uni_verse/l10n/app_locale.dart';
 import 'package:uni_verse/presentation/create_account.dart';
 import 'package:uni_verse/presentation/helpers/libraries.dart';
 import 'package:uni_verse/presentation/home_page.dart';
+import 'package:uni_verse/presentation/mental_health.dart';
 import 'package:uni_verse/presentation/new_password.dart';
 import 'package:uni_verse/presentation/others.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
@@ -57,7 +58,8 @@ class UniVerse extends StatelessWidget {
                     HomePage.route: (context) => const HomePage(),
                     TimeManagement.route: (context) => const TimeManagement(),
                     Libraries.route: (context) => const Libraries(),
-                    Others.route: (context) => const Others()
+                    Others.route: (context) => const Others(),
+                    MentalHealth.route: (context) => const MentalHealth(),
                   },
                 );
               },
