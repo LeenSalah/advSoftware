@@ -23,13 +23,13 @@ class _LibrariesState extends State<Libraries> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             "Libraries",
             style: TextStyle(fontSize: 25),
           ),
         ),
-        backgroundColor: Colors.purple,
+        backgroundColor:const Color(0xFF371942),
       ),
       body: ListView.builder(itemBuilder: (context, index){
         return _getPlaceCard(_places[index]);
@@ -51,14 +51,14 @@ class _LibrariesState extends State<Libraries> {
         child: Column(
           children: [
             Image.asset(model.image),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(model.title, style: TextStyle(fontSize: 25),),
-            SizedBox(
+            Text(model.title, style: const TextStyle(fontSize: 25),),
+            const SizedBox(
               height: 10,
             ),
-            Text(model.place, style: TextStyle(fontSize: 25),)
+            Text(model.place, style: const TextStyle(fontSize: 25),)
           ],
         ),
       ),

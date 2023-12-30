@@ -10,6 +10,7 @@ import 'package:uni_verse/presentation/new_password.dart';
 import 'package:uni_verse/presentation/others.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
 import 'package:uni_verse/presentation/time_management.dart';
+import 'package:uni_verse/welcomePage.dart';
 
 import 'generated/l10n.dart';
 
@@ -30,6 +31,7 @@ class UniVerse extends StatelessWidget {
             return Sizer(
               builder: (context, orientation, deviceType){
                 return MaterialApp(
+
                   debugShowCheckedModeBanner: false,
                   locale: AppLocale().currentLocale,
                   supportedLocales: S.delegate.supportedLocales,
@@ -40,6 +42,7 @@ class UniVerse extends StatelessWidget {
                     S.delegate
                   ],
                   theme: ThemeData(
+                    fontFamily: "NunitoSans",
                     primaryColor: const Color(0xFF371942),
                     textTheme: const TextTheme(
                       bodyLarge: TextStyle(fontSize: 30),

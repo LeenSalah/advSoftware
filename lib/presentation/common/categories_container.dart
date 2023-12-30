@@ -24,7 +24,7 @@ class CategoriesContainer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon),
+            Icon(icon, color: Color(0xFF7956a9),size: 30,),
             SizedBox(height: 20,),
             label,
           ],
