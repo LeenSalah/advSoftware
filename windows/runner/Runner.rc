@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "advsoftware" "\0"
+            VALUE "FileDescription", "uni_verse" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "advsoftware" "\0"
+            VALUE "InternalName", "uni_verse" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "advsoftware.exe" "\0"
-            VALUE "ProductName", "advsoftware" "\0"
+            VALUE "OriginalFilename", "uni_verse.exe" "\0"
+            VALUE "ProductName", "uni_verse" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
