@@ -10,6 +10,7 @@ import 'helpers/Budgeting.dart';
 
 class HomePage extends StatelessWidget {
   static String route = "HomePage";
+
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -20,21 +21,59 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Choose what you wanna manage', style: TextStyle(
-            fontSize:
-            Theme.of(context).textTheme.bodyLarge?.fontSize), textAlign: TextAlign.center,),
-            SizedBox(height: 3.h,),
-            CategoriesContainer(label: const Text('Time management'), icon: CupertinoIcons.time_solid, onTap: (){Navigator.pushNamed(context, TimeManagement.route);},),
+            Text(
+              'Choose what you wanna manage',
+              style: TextStyle(
+                  color: Color(0xFF41374A),
+                  fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 3.h,
+            ),
+            CategoriesContainer(
+              label: const Text('Time management',
+                  style: TextStyle(color: Color(0xFF41374A), fontSize: 25)),
+              icon: CupertinoIcons.time_solid,
+              onTap: () {
+                Navigator.pushNamed(context, TimeManagement.route);
+              },
+            ),
             SizedBox(
               height: 5.h,
             ),
-            CategoriesContainer(label: const Text('Budgeting'), icon: CupertinoIcons.money_dollar, onTap: (){},),
+            CategoriesContainer(
+              label: const Text('Budgeting',
+                  style: TextStyle(color: Color(0xFF41374A), fontSize: 25)),
+              icon: CupertinoIcons.money_dollar,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Budget()),
+                );
+              },
+            ),
             SizedBox(
               height: 5.h,
             ),
-            CategoriesContainer(label: const Text('Mental health'), icon: CupertinoIcons.person, onTap: (){Navigator.pushNamed(context, MentalHealth.route);},),
-            SizedBox(height: 5.h,),
-            CategoriesContainer(label: const Text('others'), icon: CupertinoIcons.add,onTap: (){Navigator.pushNamed(context, Others.route);},)
+            CategoriesContainer(
+              label: const Text('Mental health',
+                  style: TextStyle(color: Color(0xFF41374A), fontSize: 25)),
+              icon: CupertinoIcons.person,
+              onTap: () {},
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            CategoriesContainer(
+              label: const Text('others',
+                  style: TextStyle(color: Color(0xFF41374A), fontSize: 25)),
+              icon: CupertinoIcons.add,
+              onTap: () {
+                Navigator.pushNamed(context, Others.route);
+              },
+            )
+
           ],
         ),
       ),
