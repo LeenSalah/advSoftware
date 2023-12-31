@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:uni_verse/presentation/helpers/Restaurants_offers.dart';
 import 'package:uni_verse/presentation/helpers/libraries.dart';
 import 'common/categories_container.dart';
 import 'helpers/prayerRooms.dart';
@@ -38,7 +39,10 @@ class Others extends StatelessWidget {
                 CategoriesContainer(
                   label: const Text('Restaurants offers',style: TextStyle(color: Color(0xFF41374A),fontSize: 25),),
                   icon: Icons.fastfood,
-                  onTap: () {},
+                  onTap: () { Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RestaurantsOffers()),
+                  );},
                 ),
                 SizedBox(
                   height: 5.h,
