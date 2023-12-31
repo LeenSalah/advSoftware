@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_button/constants.dart';
 import 'package:sign_button/create_button.dart';
 import 'package:sizer/sizer.dart';
+import 'package:uni_verse/presentation/home_page.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
 import '../generated/l10n.dart';
 import 'common/Colored_check_box.dart';
@@ -97,7 +98,10 @@ class _CreateAccountState extends State<CreateAccount> {
               ResizableButton(
                   text: S.of(context).signUp,
                   width: 100.w,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.pushNamed(context, HomePage.route);
+
+                  }),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
