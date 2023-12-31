@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "860530163369",
+    "project_id": "adv-software",
+    "storage_bucket": "adv-software.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860530163369:android:12099bd57c08b338ce33b8",
+        "android_client_info": {
+          "package_name": "com.example.uni_verse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLKMeGM159tvFooMdc7osX3SGbkHI0-wY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
