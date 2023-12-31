@@ -60,7 +60,10 @@ class HomePage extends StatelessWidget {
               label: const Text('Mental health',
                   style: TextStyle(color: Color(0xFF41374A), fontSize: 25)),
               icon: CupertinoIcons.person,
-              onTap: () {},
+              onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MentalHealth()),
+              );},
             ),
             SizedBox(
               height: 5.h,
