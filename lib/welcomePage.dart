@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uni_verse/presentation/create_account.dart';
+import 'package:uni_verse/presentation/helpers/publishOffers.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
 
 class Welcome extends StatefulWidget {
@@ -129,7 +130,10 @@ class _WelcomeState extends State<Welcome> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Publish_Offers()),
+              );},
               style: ElevatedButton.styleFrom(
                 elevation: 20,
                 fixedSize: const Size(300, 80),
