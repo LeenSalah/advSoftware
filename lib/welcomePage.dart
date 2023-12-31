@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uni_verse/presentation/create_account.dart';
+import 'package:uni_verse/presentation/helpers/publishAnnouncements.dart';
+import 'package:uni_verse/presentation/helpers/publishArticles.dart';
 import 'package:uni_verse/presentation/helpers/publishOffers.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
 
@@ -19,7 +21,6 @@ class _WelcomeState extends State<Welcome> {
         child: AppBar(
 
           elevation: 20,
-
           backgroundColor: Color(0xFF371942),
           title:  Center(child: Image.asset("assets/414731814_1023146918790884_6995214750630900101_n.png",
           width: 200,
@@ -66,7 +67,10 @@ class _WelcomeState extends State<Welcome> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Publish_Articles()),
+              );},
               style: ElevatedButton.styleFrom(
                 elevation: 20,
                 fixedSize: const Size(300, 80),
@@ -88,7 +92,10 @@ class _WelcomeState extends State<Welcome> {
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
 
-              onPressed: () {},
+              onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Publish_Announcements()),
+              );},
               style: ElevatedButton.styleFrom(
                 elevation: 20,
                 fixedSize: const Size(270, 80),
