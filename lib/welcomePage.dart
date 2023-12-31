@@ -21,7 +21,6 @@ class _WelcomeState extends State<Welcome> {
         child: AppBar(
 
           elevation: 20,
-
           backgroundColor: Color(0xFF371942),
           title:  Center(child: Image.asset("assets/414731814_1023146918790884_6995214750630900101_n.png",
           width: 200,
