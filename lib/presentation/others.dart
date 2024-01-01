@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uni_verse/presentation/helpers/Restaurants_offers.dart';
 import 'package:uni_verse/presentation/helpers/libraries.dart';
+import 'announcement.dart';
 import 'common/categories_container.dart';
 import 'helpers/prayerRooms.dart';
 
@@ -63,7 +64,7 @@ class Others extends StatelessWidget {
                 CategoriesContainer(
                   label: const Text('Announcements',style: TextStyle(color: Color(0xFF41374A),fontSize: 25)),
                   icon: CupertinoIcons.mic_solid,
-                  onTap: () {},
+                  onTap: () {Navigator.pushNamed(context, Announcement.route);},
                 ),
 
                 SizedBox(

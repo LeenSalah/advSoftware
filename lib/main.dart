@@ -4,8 +4,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uni_verse/l10n/app_locale.dart';
+import 'package:uni_verse/presentation/announcement.dart';
 import 'package:uni_verse/presentation/chart.dart';
 import 'package:uni_verse/presentation/create_account.dart';
+import 'package:uni_verse/presentation/dummy_announcements.dart';
 import 'package:uni_verse/presentation/helpers/libraries.dart';
 import 'package:uni_verse/presentation/home_page.dart';
 import 'package:uni_verse/presentation/mental_health.dart';
@@ -50,6 +52,7 @@ class UniVerse extends StatelessWidget {
                     S.delegate
                   ],
                   theme: ThemeData(
+                    useMaterial3: false,
                     fontFamily: "NunitoSans",
                     primaryColor: const Color(0xFF371942),
                     textTheme: const TextTheme(
@@ -68,7 +71,9 @@ class UniVerse extends StatelessWidget {
                     Others.route: (context) => const Others(),
                     MentalHealth.route: (context) => const MentalHealth(),
                     Profile.route: (context) => const Profile(),
-                    PieChartSample2.route: (context) => const PieChartSample2()
+                    PieChartSample2.route: (context) => const PieChartSample2(),
+                    Announcement.route: (context) => const Announcement(),
+                    DummyAnnouncement.route: (context) => const DummyAnnouncement()
                   },
                 );
               },

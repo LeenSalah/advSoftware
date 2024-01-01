@@ -23,7 +23,8 @@ class _ProfileState extends State<Profile> {
       child: Scaffold(
         body: Column(
           children: [
-            SizedBox(height: 3.h,),
+            Align(alignment: Alignment.topLeft, child: BackButton(),),
+            //SizedBox(height: 3.h,),
             Center(
               child: SizedBox(
                 width: 80.w,
