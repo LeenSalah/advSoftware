@@ -19,10 +19,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Padding(
-            padding: EdgeInsets.all(45),
-            child: Text('Choose what you \n wanna manage'),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(80.0), // Set the desired height
+          child: AppBar(
+            backgroundColor: Color(0xFF41374A),
+            title:  Padding(
+              padding: EdgeInsets.symmetric( horizontal: 50,),
+              child: Text(' Choose what you \n wanna manage', style: TextStyle(fontSize: 25),),
+            ),
           ),
         ),
          drawer: Drawer(
