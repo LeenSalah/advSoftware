@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../chart.dart';
 class Budget extends StatefulWidget {
   @override
   _BudgetState createState() => _BudgetState();
@@ -165,7 +167,7 @@ class _BudgetState extends State<Budget> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 70),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {Navigator.pushNamed(context, PieChartSample2.route);},
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(20, 50),
                 backgroundColor: Color(0xFF371942),
