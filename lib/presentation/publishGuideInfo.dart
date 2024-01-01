@@ -35,7 +35,7 @@ class Publish_GuideInfo extends StatelessWidget {
               ),
             ),
            const SizedBox(height:30),
-           Image.asset("assets/414731814_1023146918790884_6995214750630900101_n.png", color: const Color(0xFF371942),),
+           Image.asset("assets/414731814_1023146918790884_6995214750630900101_n.png", color: const Color(0xFF5B3256),),
             const SizedBox(height:90),
             Center(
               child: FloatingActionButton(
