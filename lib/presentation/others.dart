@@ -65,14 +65,7 @@ class Others extends StatelessWidget {
                   icon: CupertinoIcons.mic_solid,
                   onTap: () {},
                 ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                CategoriesContainer(
-                  label: const Text('Uni map',style: TextStyle(color: Color(0xFF41374A),fontSize: 25)),
-                  icon: CupertinoIcons.location_solid,
-                  onTap: () {},
-                ),
+
                 SizedBox(
                   height: 5.h,
                 ),
@@ -85,6 +78,14 @@ class Others extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => Libraries()),
                     );
                   },
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                CategoriesContainer(
+                  label: const Text('Uni map',style: TextStyle(color: Color(0xFF41374A),fontSize: 25)),
+                  icon: CupertinoIcons.location_solid,
+                  onTap: () {},
                 ),
                 SizedBox(
                   height: 5.h,

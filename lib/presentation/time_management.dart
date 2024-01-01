@@ -14,7 +14,7 @@ class TimeManagement extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFF371942),
-          title: const Text('Manage your time'),
+          title: const Text('Manage your time', style: TextStyle(fontSize: 25),),
           bottom: const TabBar(tabs: [
             Tab(icon: Icon(Icons.calendar_month, color: Color(0xFF371942),)),
             Tab(

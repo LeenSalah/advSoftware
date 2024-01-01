@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:uni_verse/presentation/SignUp_edu.dart';
+import 'package:uni_verse/presentation/SignUp_psycho.dart';
+import 'package:uni_verse/presentation/SignUp_rest.dart';
 import 'package:uni_verse/presentation/create_account.dart';
 import 'package:uni_verse/presentation/helpers/publishAnnouncements.dart';
 import 'package:uni_verse/presentation/helpers/publishArticles.dart';
 import 'package:uni_verse/presentation/helpers/publishOffers.dart';
+import 'package:uni_verse/presentation/publishGuideInfo.dart';
+import 'package:uni_verse/presentation/signUp_guide.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
 
 class Welcome extends StatefulWidget {
@@ -69,7 +74,7 @@ class _WelcomeState extends State<Welcome> {
             child: ElevatedButton(
               onPressed: () {Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Publish_Articles()),
+                MaterialPageRoute(builder: (context) => SignUpPsycho()),
               );},
               style: ElevatedButton.styleFrom(
                 elevation: 20,
@@ -94,7 +99,7 @@ class _WelcomeState extends State<Welcome> {
 
               onPressed: () {Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Publish_Announcements()),
+                MaterialPageRoute(builder: (context) => SignUpEdu()),
               );},
               style: ElevatedButton.styleFrom(
                 elevation: 20,
@@ -116,7 +121,13 @@ class _WelcomeState extends State<Welcome> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignUpGuide()),
+                );
+
+              },
               style: ElevatedButton.styleFrom(
                 elevation: 20,
                 fixedSize: const Size(300, 80),
@@ -139,7 +150,7 @@ class _WelcomeState extends State<Welcome> {
             child: ElevatedButton(
               onPressed: () {Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Publish_Offers()),
+                MaterialPageRoute(builder: (context) => SignUpRest()),
               );},
               style: ElevatedButton.styleFrom(
                 elevation: 20,

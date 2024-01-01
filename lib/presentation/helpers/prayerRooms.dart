@@ -46,7 +46,7 @@ class _PrayerRoomsState extends State<PrayerRooms> {
             child: Center(
               child: Text(
                 places[index].place,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF371942),
