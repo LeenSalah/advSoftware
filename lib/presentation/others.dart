@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 import 'package:uni_verse/presentation/helpers/Restaurants_offers.dart';
 import 'package:uni_verse/presentation/helpers/libraries.dart';
 import 'announcement.dart';
+import 'package:uni_verse/presentation/map.dart';
 import 'common/categories_container.dart';
 import 'helpers/prayerRooms.dart';
 
@@ -86,7 +87,10 @@ class Others extends StatelessWidget {
                 CategoriesContainer(
                   label: const Text('Uni map',style: TextStyle(color: Color(0xFF41374A),fontSize: 25)),
                   icon: CupertinoIcons.location_solid,
-                  onTap: () {},
+                  onTap: () { Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UniMap()),
+                  );},
                 ),
                 SizedBox(
                   height: 5.h,
