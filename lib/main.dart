@@ -10,6 +10,7 @@ import 'package:uni_verse/presentation/home_page.dart';
 import 'package:uni_verse/presentation/mental_health.dart';
 import 'package:uni_verse/presentation/new_password.dart';
 import 'package:uni_verse/presentation/others.dart';
+import 'package:uni_verse/presentation/profile.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
 import 'package:uni_verse/presentation/time_management.dart';
 import 'package:uni_verse/welcomePage.dart';
@@ -55,9 +56,8 @@ class UniVerse extends StatelessWidget {
                       bodyMedium: TextStyle(fontSize: 14),
                     ),
                   ),
-
                   home: const Welcome(),
-    routes: {
+                  routes: {
                     CreateAccount.route: (context) => const CreateAccount(),
                     SignIn.route: (context) => const SignIn(),
                     NewPassword.route: (context) => const NewPassword(),
@@ -66,6 +66,7 @@ class UniVerse extends StatelessWidget {
                     Libraries.route: (context) => const Libraries(),
                     Others.route: (context) => const Others(),
                     MentalHealth.route: (context) => const MentalHealth(),
+                    Profile.route: (context) => const Profile()
                   },
                 );
               },
