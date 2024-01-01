@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class LineDivider extends StatelessWidget {
-  const LineDivider({Key? key}) : super(key: key);
+  final double width;
+  const LineDivider({Key? key, this.width = 100}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => const SizedBox(
-        width: 100,
+  Widget build(BuildContext context) => SizedBox(
+        width: width,
         child: Divider(
           thickness: 1,
           color: Colors.black,
