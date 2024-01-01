@@ -5,8 +5,9 @@ class RoundedPasswordTextFormField extends StatefulWidget {
   final String label;
   final FormFieldValidator<String>? validator;
   final void Function(dynamic)? onChanged;
+  final TextEditingController? controller;
   const RoundedPasswordTextFormField(
-      {Key? key, this.label = "Password", this.validator, this.onChanged})
+      {Key? key, this.label = "Password", this.validator, this.onChanged, this.controller})
       : super(key: key);
 
   @override
@@ -21,6 +22,7 @@ class _RoundedPasswordTextFormFieldState
   @override
   Widget build(BuildContext context) {
     return RoundedTextFormField(
+      controller: widget.controller,
       label: widget.label,
       validator: widget.validator,
       onChanged: widget.onChanged,

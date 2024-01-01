@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -13,9 +14,14 @@ import 'package:uni_verse/presentation/sign_in.dart';
 import 'package:uni_verse/presentation/time_management.dart';
 import 'package:uni_verse/welcomePage.dart';
 
+import 'firebase_options.dart';
 import 'generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const UniVerse());
 }
 
@@ -30,9 +36,8 @@ class UniVerse extends StatelessWidget {
         child: ScopedModelDescendant<AppLocale>(
           builder: (widget, context, model) {
             return Sizer(
-              builder: (context, orientation, deviceType){
+              builder: (context, orientation, deviceType) {
                 return MaterialApp(
-
                   debugShowCheckedModeBanner: false,
                   locale: AppLocale().currentLocale,
                   supportedLocales: S.delegate.supportedLocales,
@@ -50,8 +55,9 @@ class UniVerse extends StatelessWidget {
                       bodyMedium: TextStyle(fontSize: 14),
                     ),
                   ),
+
                   home: const Welcome(),
-                  routes: {
+    routes: {
                     CreateAccount.route: (context) => const CreateAccount(),
                     SignIn.route: (context) => const SignIn(),
                     NewPassword.route: (context) => const NewPassword(),

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_button/constants.dart';
@@ -13,6 +14,7 @@ import 'common/rounded_password_text_form_field.dart';
 import 'common/rounded_text_form_field.dart';
 import 'common/underlined_text_button.dart';
 import 'helpers/validation_functions.dart';
+import 'home_page.dart';
 
 class CreateAccount extends StatefulWidget {
   static String route = "CreateAccount";
@@ -24,6 +26,9 @@ class CreateAccount extends StatefulWidget {
 
 class _CreateAccountState extends State<CreateAccount> {
   final _formKey = GlobalKey<FormState>();
+  TextEditingController emailAddress = TextEditingController();
+  TextEditingController password = TextEditingController();
+  TextEditingController name = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,6 +52,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 key: _formKey,
                 child: Column(children: [
                   RoundedTextFormField(
+                    controller: name,
                     label: S.of(context).name,
                     hintText: "Jane doe",
                     validator: (val) {
@@ -58,6 +64,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     },
                   ),
                   RoundedTextFormField(
+                    controller: emailAddress,
                     label: S.of(context).email,
                     hintText: "example@gmail.com",
                     validator: (val) {
@@ -71,6 +78,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     },
                   ),
                   RoundedPasswordTextFormField(
+                    controller: password,
                     label: S.of(context).password,
                     validator: (val) {
                       if (!Validation.isPassword(val!)) {
@@ -99,7 +107,8 @@ class _CreateAccountState extends State<CreateAccount> {
                   text: S.of(context).signUp,
                   width: 100.w,
                   onPressed: () {
-                    Navigator.pushNamed(context, HomePage.route);
+
+                    createAccount();
 
                   }),
               Row(
@@ -145,4 +154,34 @@ class _CreateAccountState extends State<CreateAccount> {
       ),
     );
   }
+
+  void createAccount() async {
+    try {
+      final credential =
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailAddress.text,
+        password: password.text,
+      );
+      if (credential.user != null) {
+
+        // ignore: use_build_context_synchronously
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const HomePage()));
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("The password provided is too weak."),
+          duration: Duration(seconds: 2),
+        ));
+      } else if (e.code == 'email-already-in-use') {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("The account already exists for that email."),
+          duration: Duration(seconds: 2),
+        ));
+      }
+    }
+  }
+
+
 }

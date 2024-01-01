@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_button/constants.dart';
 import 'package:sign_button/create_button.dart';
@@ -25,6 +26,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   bool secure = true;
   TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -73,6 +75,7 @@ class _SignInState extends State<SignIn> {
                     },
                   ),
                   RoundedPasswordTextFormField(
+                    controller: passwordController,
                     label: S.of(context).password,
                     validator: (val) {
                       if (!Validation.isPassword(val!)) {
@@ -100,7 +103,8 @@ class _SignInState extends State<SignIn> {
                 width: 100.w,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    Navigator.pushNamed(context, HomePage.route);
+                    //Navigator.pushNamed(context, HomePage.route);
+                    signIn();
                   }
                 }),
             Row(
@@ -145,4 +149,29 @@ class _SignInState extends State<SignIn> {
       ),
     ));
   }
+
+  void signIn() async {
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      if (credential.user!= null) {
+        // ignore: use_build_context_synchronously
+        Navigator.pushNamed(context, HomePage.route,
+            arguments: {"user": credential});
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("No user found for that email."),
+          duration: Duration(seconds: 2),
+        ));
+      } else if (e.code == 'wrong-password') {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("Wrong password provided for that user."),
+          duration: Duration(seconds: 2),
+        ));
+      }
+    }
+  }
+
 }
