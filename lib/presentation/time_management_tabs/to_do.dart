@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:uni_verse/presentation/common/rounded_text_form_field.dart';
 import 'package:uni_verse/presentation/common/to_do_tile.dart';
 
 class ToDo extends StatelessWidget {
@@ -10,22 +9,30 @@ class ToDo extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
            body: Column(
              children: [
-               Container(height: 70.h,),
+               Container(height: 70.h,child: ListView(
+                 children: const [
+                   ToDoTile(label: 'Study'),
+                   ToDoTile(label: 'Read a book'),
+                   ToDoTile(label: 'Skin care'),
+                   ToDoTile(label: 'do the dishes'),
+                 ],
+               ),),
                Align(
                  alignment: Alignment.bottomRight,
                  child: Padding(
                    padding: const EdgeInsets.all(15.0),
                    child: FloatingActionButton(
-      
-                     child: Icon(Icons.add),
+                     isExtended: false,
+                     child: const Icon(Icons.add),
                         onPressed: () {
                           showDialog(
                               context: context,
                               builder: (context) {
                                 return ConstrainedBox(
-                                  constraints: BoxConstraints(maxHeight: 10.h),
+                                  constraints: BoxConstraints(maxHeight: 2.h),
                                   child: AlertDialog(title: const Text('Add to-do'),
                                     content: TextFormField(),
                                     actions: [

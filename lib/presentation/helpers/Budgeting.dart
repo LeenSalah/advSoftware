@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+
+import '../chart.dart';
 class Budget extends StatefulWidget {
   @override
   _BudgetState createState() => _BudgetState();
 }
 
 class _BudgetState extends State<Budget> {
-  TextEditingController _textController = TextEditingController();
+  TextEditingController _foodController = TextEditingController();
+  TextEditingController _expensesController = TextEditingController();
+  TextEditingController _transportationController = TextEditingController();
+  TextEditingController _otherController = TextEditingController();
   bool isChecked = false;
   bool isChecked2 = false;
   bool isChecked3 = false;
@@ -46,7 +51,7 @@ class _BudgetState extends State<Budget> {
           // Text Field
           TextField(
             keyboardType: TextInputType.number,
-            controller: _textController,
+            controller: _expensesController,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.money, color: Color(0xFF371942)),
               border: OutlineInputBorder(
@@ -77,7 +82,7 @@ class _BudgetState extends State<Budget> {
           // Text Field
           TextField(
             keyboardType: TextInputType.number,
-            controller: _textController,
+            controller: _foodController,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.money, color: Color(0xFF371942)),
               border: OutlineInputBorder(
@@ -110,7 +115,7 @@ class _BudgetState extends State<Budget> {
           // Text Field
           TextField(
             keyboardType: TextInputType.number,
-            controller: _textController,
+            controller: _transportationController,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.money, color:Color(0xFF371942)),
               border: OutlineInputBorder(
@@ -144,7 +149,7 @@ class _BudgetState extends State<Budget> {
           // Text Field
           TextField(
             keyboardType: TextInputType.number,
-            controller: _textController,
+            controller: _otherController,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.money, color: Color(0xFF371942)),
               border: OutlineInputBorder(
@@ -165,7 +170,7 @@ class _BudgetState extends State<Budget> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 70),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {Navigator.pushNamed(context, PieChartSample2.route);},
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(20, 50),
                 backgroundColor: Color(0xFF371942),
