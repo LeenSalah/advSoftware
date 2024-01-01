@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:uni_verse/presentation/myFavorite.dart';
 
 class ArticlesCard extends StatefulWidget {
   final String title;
@@ -19,9 +20,9 @@ class _ArticlesCardState extends State<ArticlesCard> {
           width: 95.w,
           height: 15.h,
           child: Column(
-            children: [
-              ClipRRect(borderRadius: BorderRadius.circular(9.0),child: Image.asset('assets/articles.jpg', fit: BoxFit.fitWidth, width: 95.w, height: 15.h,)),
-            ]
+              children: [
+                ClipRRect(borderRadius: BorderRadius.circular(9.0),child: Image.asset('assets/articles.jpg', fit: BoxFit.fitWidth, width: 95.w, height: 15.h,)),
+              ]
           ),
         ),
         Padding(

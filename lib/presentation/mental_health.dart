@@ -23,22 +23,23 @@ class _MentalHealthState extends State<MentalHealth> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('read about mental health'),
-          actions: [
+          title: Text('Read about mental health', style: TextStyle(fontSize: 23),),
+          backgroundColor: Color(0xFF371942),
+          actions: const [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(CupertinoIcons.heart_fill, color: Colors.black,),
+              padding: EdgeInsets.all(8.0),
+              child: Icon(CupertinoIcons.heart_fill, color: Color(0xFF816E94),),
             )
           ],
         ),
         body: ListView.builder(itemBuilder: (context, index){
           return ArticlesCard(title: articles[index].title);
         },
-        itemCount: articles.length,),
+          itemCount: articles.length,),
       ),
     );
   }
-  
+
   void fillArticles(){
     articles.add(ArticlesModel('About mental health', '', '+962796937812'));
     articles.add(ArticlesModel('Coping with Depression', '', '+962796937812'));

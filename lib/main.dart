@@ -55,8 +55,9 @@ class UniVerse extends StatelessWidget {
                       bodyMedium: TextStyle(fontSize: 14),
                     ),
                   ),
-                  home: const CreateAccount(),
-                  routes: {
+
+                  home: const Welcome(),
+    routes: {
                     CreateAccount.route: (context) => const CreateAccount(),
                     SignIn.route: (context) => const SignIn(),
                     NewPassword.route: (context) => const NewPassword(),
