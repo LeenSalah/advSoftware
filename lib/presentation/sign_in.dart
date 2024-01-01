@@ -103,8 +103,8 @@ class _SignInState extends State<SignIn> {
                 width: 100.w,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    Navigator.pushNamed(context, HomePage.route);
-                    //signIn();
+                    //Navigator.pushNamed(context, HomePage.route);
+                    signIn();
                   }
                 }),
             Row(

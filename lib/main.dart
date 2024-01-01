@@ -17,8 +17,8 @@ import 'package:uni_verse/welcomePage.dart';
 import 'firebase_options.dart';
 import 'generated/l10n.dart';
 
-Future<void> main() async {
-  await WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -55,7 +55,7 @@ class UniVerse extends StatelessWidget {
                       bodyMedium: TextStyle(fontSize: 14),
                     ),
                   ),
-                  home: const HomePage(),
+                  home: const CreateAccount(),
                   routes: {
                     CreateAccount.route: (context) => const CreateAccount(),
                     SignIn.route: (context) => const SignIn(),

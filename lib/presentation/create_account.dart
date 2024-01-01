@@ -106,7 +106,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   text: S.of(context).signUp,
                   width: 100.w,
                   onPressed: () {
-                    //createAccount();
+                    createAccount();
                   }),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
